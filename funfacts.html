@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Fun Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6c5ce7, #a363d9);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .fact-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .fact-card h3 {
+            color: #6c5ce7;
+            margin: 0 0 10px 0;
+        }
+
+        .fact-card p {
+            color: #2d3436;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+            button {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="factContainer">
+            <div class="fact-card">
+                <h3>Fun Fact</h3>
+                <p id="currentFact"></p>
+            </div>
+        </div>
+        <button onclick="changeFact()">Next Fun Fact</button>
+            </div>
+
+    <script>
+        const funFacts = [
+            "I love hiking and have traveled to five national parks.",
+    "I am an avid reader and read around 20 books per year.",
+    "I once baked a 3-tiered cake for a family gathering!",
+    "I speak three languages fluently.",
+    "I’m learning to play the guitar in my free time.",
+            "Has mastered all the best photo angles and filters, but still considers wearing a paper bag in real life.",
+            "Spends more time choosing a profile picture than getting ready for an actual date.",
+            "Writes such charming messages that girls forget to ask for selfies.",
+            "Has convinced themselves that their personality is their best filter.",
+            "Could write a PhD thesis on lighting and camera angles, but still avoids group photos like the plague."
+        ];
+
+        let currentIndex = 0;
+        const factElement = document.getElementById('currentFact');
+
+        function changeFact() {
+            currentIndex = (currentIndex + 1) % funFacts.length;
+            factElement.textContent = funFacts[currentIndex];
+        }
+
+        // Show first fact on load
+        factElement.textContent = funFacts[0];
+    </script>
+</body>
+</html>
